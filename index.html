@@ -1,0 +1,162 @@
+<!doctype html>
+
+
+
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>FAKTUROMATEK</title>
+    <meta name="author" content="Jakub Strzałka">
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        FAKTUROMATEK®
+    </header>
+    <main>
+        <nav id="top-menu">
+            MENUUUUUU
+        </nav>
+        <form class="formul" action="machine/generate.php" method="post" target="_blank">
+
+            <div class="form-title">
+                GENERATOR WOLNEJ FAKTURY
+            </div>
+
+            <section class="top-data">
+                <label class="label_top">
+                    Numer faktury:<br> <input type='text' id='nr_fak' class='text-input' name='nr_fak'>
+                    <span class="but-A_I" title="Autouzupełnienie" onclick="uzupel(1)">A</span>
+                </label>
+                <label class="label_top">
+                    Data wystawienia:<br> <input id='data_wys' value="" type='date'  class='text-input' name="data_wys">
+                    <span class="but-A_I" title="Autouzupełnienie" onclick="uzupel(2)">A</span>
+                </label>
+                <label class="label_top">
+                    Miejsce wystawienia:<br> <input type='text' id='miej' class='text-input' name="miejsce">
+                    <span class="but-A_I" title="Autouzupełnienie" onclick="uzupel(3)">A</span>
+                </label>
+                <label class="label_top">
+                    Data dokonania dostawy lub wykonania usługi: <br> <input type='date' id='data_wyk' class='text-input' name="data_wyk">
+                    <span class="but-A_I" title="Autouzupełnienie" onclick="uzupel(4)">A</span>    
+                </label>
+
+
+            </section>
+
+            <section id="sprzedawca" class="dane">
+                <div class="name-mid">Sprzedawca:</div>
+                <label class="label_top">
+                    Nazwa: <br> <input type='text' id='nazwa' class='text-input mid-text' name="sprzedawca">
+                    <span class="but-A_I" title="Autouzupełnienie" onclick="uzupel(5)">A</span>
+                </label>
+                <label class="label_top">
+                    Adres: <br> <input type='text' id='adres' class='text-input mid-text' name="sprze_adres">
+                   
+                </label>
+                <label class="label_top">
+                    NIP: <br> <input type='text' id='nip' class='text-input mid-text' name="sprze_nip">
+                    
+                </label>
+            </section>
+            <section id="nabywca" class="dane">
+                <div class="name-mid">Nabywca:</div>
+                <label class="label_top">
+                    Nazwa: <br> <input type='text' class='text-input mid-text' name="nabywca">
+                </label>
+                <label class="label_top">
+                    Adres: <br> <input type='text' class='text-input mid-text' name="nabywca_adres">
+                </label>
+                <label class="label_top">
+                    NIP: <br> <input type='text' class='text-input mid-text' name="nabywca_nip">
+                </label>
+            </section>
+            <section id="towary">
+                <div class="name-mid" style="margin-top: 10px;font-size: 30px;float:left; width:1020px;">Towary:</div>
+                <div onclick="add()" class="add-button" style="float:left;margin-top:20px;"><i class="fas fa-plus"></i></div>
+                <table style="margin:0 20px; width:1040px">
+                    <tr>
+                        <td class="top-table td6">Towar</td>
+                        <td class="top-table td1">Ilość</td>
+                        <td class="top-table td1">JM</td>
+                        <td class="top-table td1">VAT<br>%</td>
+                        <td class="top-table td1">Cena<br>brutto</td>
+                        <td class="top-table td1"> TR</td>
+
+                    </tr>
+                </table>
+                <table style="margin:0 20px; width:1040px;" id="T1">
+                    <tr>
+                        <td class=" td6"><input class="td" name="tw[1]"></td>
+
+                        <td class=" td1"><input type="number" min='1' class="td" name="ilo[1]"></td>
+                        <td class=" td1"><input list="JM" class="td" name="jm[1]"></td>
+                        <td class=" td1"><input list="VAT" class="td" name="vat[1]"></td>
+                        <td class=" td1"><input type="number" step="0.01" min="0"  class="td" name="cena[1]"></td>
+                        <td class=" td1"> <i class="tr-button far fa-trash-alt"></i></td>
+                    </tr>
+                </table>
+                <div id="next_tw"></div>
+            </section>
+            <input id="il_tow"  type='hidden' name="il_tow" value="1">
+            <div style="clear:both;"></div>
+            <section style="width: 100%; text-align:center;">
+                <button class='but-sub'>Generuj PDF!</button>
+            </section>
+
+        </form>
+
+      
+
+    </main> 
+     <footer> FAKTUROMATEK v 0.9.1 </footer>
+    <datalist id="JM">
+        <option value="szt">
+        <option value="opak.">
+        <option value="kg">
+        <option value="dag">
+        <option value="g">
+        <option value="t">
+        <option value="m">
+        <option value="km">
+        <option value="m2">
+        <option value="m3">
+        <option value="l">
+    </datalist>
+    <datalist id="VAT">
+        <option value="23">
+        <option value="8">
+        <option value="0">
+        <option value="5">
+
+    </datalist>
+       <script src="jQuery.js"></script>
+       <script>
+         var nazwa="AllChemia Iwona Strzałka";
+         var adres="Tadeusz Kościuszki 2, 62-840 Koźminek";
+         var nip="9680415790";  
+         var miej='Koźminek';
+         var d= new Date();
+         var mies=d.getMonth ()+1;
+       
+         if(mies<10)
+         {
+             mies='0'+mies;
+         }  
+        
+        var adate=d.getFullYear()+'-'+mies+'-'+d.getDate();
+       
+       
+    </script>
+  
+    <script src="script.js"></script>
+   
+</body>
+
+</html>

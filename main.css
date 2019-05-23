@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Prompt:400,500,600,700&display=swap&subset=latin-ext');body
+{
+    background:#3333CC;
+    margin: 0%;
+   color:#3333CC;
+   font-family: 'Prompt', sans-serif;
+}
+header
+{
+    width: 100%;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    color:white;
+    font-size: 40px;
+    border-bottom: White 2px solid;
+    letter-spacing: 10px;
+}
+#top-menu
+{
+text-align: center;
+
+color:white;
+height:40px;
+}
+
+main
+{
+    width: 1100px;
+    
+    min-height:800px;
+    margin:0px auto;
+}
+.formul
+{
+    margin-top:20px;
+    background: #FAFAFA; 
+     box-shadow: 0px 0px 51px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 51px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 51px 0px rgba(0,0,0,0.75);
+  border-radius:10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.form-title
+{
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size:35px;
+}
+
+.top-data
+{
+    margin-top:10px;
+}
+.label_top
+{
+  font-weight: 500;
+    font-size:25px;
+    display: block;
+    margin-bottom:20px;
+}
+.text-input
+{
+    color:#3333CC;
+    width:30%;
+   border-radius:10px;
+    font-size: 18px;
+    padding:5px;
+    box-sizing: border-box;
+    border:3px solid #7e7efb;
+    outline: none;
+    transition: border-color 500ms;
+}
+.text-input:focus
+{
+    border:3px solid #3333CC;
+}
+.dane
+{
+    width: 50%;
+    box-sizing: border-box;
+    float: left;
+    
+}
+#nabywca
+{
+    padding:0 0 0 10px;
+    border-left: 2px solid rgba(14, 0, 214, 0.301)
+}
+.name-mid
+{
+    font-size: 25px;
+    font-weight: 500;
+    border-bottom: rgba(14, 0, 214, 0.301) groove;
+}
+.but-sub
+{
+    margin-top: 10px;
+  
+    height: 50px;
+    width: 300px;
+    color:white;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    border-radius: 25px;
+    outline: none;
+    border:none;
+    font-family: 'Prompt', sans-serif;
+    background: rgb(76, 76, 253);
+transition: background-color 1s, width 1s;
+}
+.but-sub:hover
+{
+    background: #3333CC;
+    width:350px;
+
+}
+.top-table
+{
+	border-bottom:1px #3333CC solid;
+	text-align:center;
+
+}
+.mid-text
+{
+    width: 60%;
+}
+
+.td1
+{
+    box-sizing: border-box;
+    width:10%;
+    text-align:center;
+}
+.td2
+{
+    box-sizing: border-box;
+    width:10%;
+    text-align:center;
+}
+.td6
+{
+    box-sizing: border-box;
+	width:50%;text-align:center;
+}
+.td
+{
+    width: 95%;;
+}
+.add-button
+{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 3px #3333CC solid;
+ 
+    color:#3333CC ;
+    text-align: center;
+   font-size: 20px;
+   transition: 500ms;
+}
+.add-button:hover
+{
+    
+    border: 3px red solid;
+    cursor: pointer;
+    color:red;   
+transform: rotate(180deg) ;
+}
+.tr-button
+{
+    transition: 500ms;
+}
+.tr-button:hover
+{
+  
+    cursor: pointer;
+    color:red;   
+transform: rotate(360deg) ;
+}
+
+.but-A_I
+{
+    transition: 700ms;
+    border: 3px #3333CC solid;
+    height:30px;
+    width: 30px;
+    
+    background-color:white ;
+    border-radius: 50%;
+    color:#3333CC;
+    text-align: center;
+    display: inline-block;
+  line-height: 30px;
+  margin:0;
+  user-select: none;
+   
+}
+.but-A_I:hover
+{
+    border: 3px red solid;
+  
+    cursor: pointer;
+    color:red;   
+transform: rotate(360deg) ;
+}
+footer
+{
+    color: rgb(76, 76, 253);
+    border-top: white solid 3px;
+    margin-top:20px;
+    text-align: center;
+}

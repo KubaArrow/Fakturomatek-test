@@ -1,0 +1,8 @@
+Main color: #6699FF
+Logo czcionka: Permanent Marker
+font-family: 'Permanent Marker', cursive;
+<style>
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+</style>
+font-family: 'Prompt', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Prompt:400,600,700&display=swap&subset=latin-ext');
